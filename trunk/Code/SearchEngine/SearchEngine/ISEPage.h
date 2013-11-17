@@ -52,19 +52,19 @@ public:
 	~ISEPage(void);
 private:
 	/* 解析网页头信息*/
-	void ise_GetStatusCode(std::string header);
-	void ise_GetContentLength(std::string header);
-	void ise_GetConnectionState(std::string header);
-	void ise_GetLocation(std::string header);
-	void ise_GetCharset(std::string header);
-	void ise_GetContentEncoding(std::string header);
-	void ise_GetContentType(std::string header);
-	void ise_GetTransferEncoding(std::string header);
+	void ise_GetStatusCode(std::string szHeader);
+	void ise_GetContentLength(std::string szHeader);
+	void ise_GetConnectionState(std::string szHeader);
+	void ise_GetLocation(std::string szHeader);
+	void ise_GetCharset(std::string szHeader);
+	void ise_GetContentEncoding(std::string szHeader);
+	void ise_GetContentType(std::string szHeader);
+	void ise_GetTransferEncoding(std::string szHeader);
 	/* 从网页体中解析链接信息*/
 	bool ise_GetContentLinkInfo();
-	bool ise_GetLinkInfo4SE();
-	bool ise_GetLinkInfo4History();
-	bool ise_FindRefLink4SE();
-	bool ise_FindRefLink4History();
+	bool ise_GetLinkInfoForSE();
+	bool ise_GetLinkInfoForHistory();
+	bool ise_FindRefLinkForSE();
+	bool ise_FindRefLinkForHistory();
 };
 
