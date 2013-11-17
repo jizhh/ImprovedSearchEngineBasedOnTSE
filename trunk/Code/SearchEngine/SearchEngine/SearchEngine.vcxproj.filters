@@ -24,12 +24,18 @@
     <ClCompile Include="ISEPage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ISEHttp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ISEUrl.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ISEPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ISEHttp.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

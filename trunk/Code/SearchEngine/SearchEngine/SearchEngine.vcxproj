@@ -60,11 +60,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ISEHttp.cpp" />
     <ClCompile Include="ISEPage.cpp" />
     <ClCompile Include="ISEUrl.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ISEHttp.h" />
     <ClInclude Include="ISEPage.h" />
     <ClInclude Include="ISEUrl.h" />
   </ItemGroup>
