@@ -2,9 +2,9 @@
 #include "Url.h"
 #include "Md5.h"
 
-#include <list.h>
-#include <hlink.h>
-#include <uri.h>
+#include "include\list.h"
+#include "include\hlink.h"
+#include "include\uri.h"
 
 extern pthread_mutex_t mymutex;
 extern map<string,string> mapCacheHostLookup;

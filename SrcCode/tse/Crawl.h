@@ -1,9 +1,7 @@
 #ifndef _Crawl_H_031104_
 #define _Crawl_H_031104_
 
-#include <openssl/md5.h>
-#include <zlib.h>
-
+#include "Md5.h"
 #include "Tse.h"
 #include "Http.h"
 #include "StrFun.h"
