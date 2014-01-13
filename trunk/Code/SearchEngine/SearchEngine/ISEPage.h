@@ -1,17 +1,23 @@
 /**********************************************
-*
-*
-*
+*Copyright 2014 Zhonghao Ji
+*File: ISEPage.h
+*Author: Zhonghao Ji
+*Description: Page Class Declaration
 **********************************************/
 
 #pragma once
 #include <string>
 #include <map>
 #include <vector>
+#include "basetype.h"
 
 class ISEPage
 {
 public:
+	INT iHeaderLen;
+	INT iStatusCode;
+	INT iHeaderContentLength;
+	BOOL bConnectionState;
 	/*网页头信息*/
 	std::string szUrl;
 	std::string szHeader;
@@ -20,10 +26,6 @@ public:
 	std::string szContentType;
 	std::string szCharSet;
 	std::string szTransferEncoding;
-	int iHeaderLen;
-	int iStatusCode;
-	int iHeaderContentLength;
-	bool bConnectionState;
 
 	/*网页体信息*/
 	std::string szContent;
@@ -33,38 +35,38 @@ public:
 	std::string szLinkInfoForISE;
 	/*为历史存档准备的链接*/
 	std::string szLinkinfoForHistory;
-	int iLinkInfoForHistoryLen;
+	INT iLinkInfoForHistoryLen;
 
-	int iLinkInfoForISELen;
-	int iContentLen;
+	INT iLinkInfoForISELen;
+	INT iContentLen;
 public:
-	ISEPage(void);
+	ISEPage(VOID);
 	ISEPage(std::string szUrl, 
 		    std::string szLocation, 
-		    char* pcHeader, 
-			char* pcBody,
-			int iBodyLen);
+		    CHAR* pcHeader, 
+			CHAR* pcBody,
+			INT iBodyLen);
 	void ISE_ParseHeaderInfo(std::string szHeader);
 	/*解析链接信息*/
-	bool ISE_ParseHyperLink();
-	bool ISE_NormallizeUrl(std::string &szUrl);
-	bool ISE_IsFilterLink(std::string szLink);
-	~ISEPage(void);
+	BOOL ISE_ParseHyperLink();
+	BOOL ISE_NormallizeUrl(std::string &szUrl);
+	BOOL ISE_IsFilterLink(std::string szLink);
+	~ISEPage(VOID);
 private:
 	/* 解析网页头信息*/
-	void ise_GetStatusCode(std::string szHeader);
-	void ise_GetContentLength(std::string szHeader);
-	void ise_GetConnectionState(std::string szHeader);
-	void ise_GetLocation(std::string szHeader);
-	void ise_GetCharset(std::string szHeader);
-	void ise_GetContentEncoding(std::string szHeader);
-	void ise_GetContentType(std::string szHeader);
-	void ise_GetTransferEncoding(std::string szHeader);
+	VOID ise_GetStatusCode(std::string szHeader);
+	VOID ise_GetContentLength(std::string szHeader);
+	VOID ise_GetConnectionState(std::string szHeader);
+	VOID ise_GetLocation(std::string szHeader);
+	VOID ise_GetCharset(std::string szHeader);
+	VOID ise_GetContentEncoding(std::string szHeader);
+	VOID ise_GetContentType(std::string szHeader);
+	VOID ise_GetTransferEncoding(std::string szHeader);
 	/* 从网页体中解析链接信息*/
-	bool ise_GetContentLinkInfo();
-	bool ise_GetLinkInfoForSE();
-	bool ise_GetLinkInfoForHistory();
-	bool ise_FindRefLinkForSE();
-	bool ise_FindRefLinkForHistory();
+	BOOL ise_GetContentLinkInfo();
+	BOOL ise_GetLinkInfoForSE();
+	BOOL ise_GetLinkInfoForHistory();
+	BOOL ise_FindRefLinkForSE();
+	BOOL ise_FindRefLinkForHistory();
 };
 

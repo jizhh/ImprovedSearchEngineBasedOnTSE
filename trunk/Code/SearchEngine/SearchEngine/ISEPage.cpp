@@ -1,11 +1,16 @@
+/**********************************************
+*Copyright 2014 Zhonghao Ji
+*File: ISEPage.cpp
+*Author: Zhonghao Ji
+*Description: Page class defination
+**********************************************/
 #include "ISEPage.h"
 
-
-ISEPage::ISEPage(void)
+ISEPage::ISEPage(VOID)
 {
 }
 
 
-ISEPage::~ISEPage(void)
+ISEPage::~ISEPage(VOID)
 {
 }

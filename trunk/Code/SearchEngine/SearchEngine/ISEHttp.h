@@ -1,27 +1,36 @@
+/**********************************************
+*Copyright 2014 Zhonghao Ji
+*File: ISEHttp.h
+*Author: Zhonghao Ji
+*Description: HTTP Class Declaration
+**********************************************/
+#ifndef _ISEHTTP_H_
+#define _ISEHTTP_H_
+
 #pragma once
 #include <map>
+#include "basetype.h"
 
-class ISEHttp
+class	ISEHttp
 {
-private:
-	std::string szUrl;	
-	int *piSock;		
-
 public:
 	ISEHttp();
 	virtual ~ISEHttp();
 
-	int ISE_Fetch(std::string strUrl, 
-		      char **ppcFileBuf, 
-			  char **ppcFileHead, 
-			  char **ppcLocation, 
-			  int* piSock);
+	INT ISE_Fetch(std::string strUrl, 
+		          CHAR **ppcFileBuf, 
+			      CHAR **ppcFileHead, 
+			      CHAR **ppcLocation, 
+				  INT* piSock);
 
 private:
-	int ise_read_header(int iSock, char *pcHeaderPtr);
-	int ise_CreateSocket(const char *pcHost, int iPort);
+	INT ise_read_header(INT iSock, CHAR *pcHeaderPtr);
+	INT ise_CreateSocket(CONST CHAR *pcHost, INT iPort);
 
-	int ise_nonb_connect(int, struct sockaddr*, int);
-	int ise_checkBufSize(char **buf, int *bufsize, int more);
+	INT ise_nonb_connect(INT, struct sockaddr*, INT);
+	INT ise_checkBufSize(CHAR **buf, INT *bufsize, INT more);
+	INT *piSock;
+	std::string szUrl;
 };
+#endif
 

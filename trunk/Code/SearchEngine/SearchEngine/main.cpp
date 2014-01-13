@@ -1,11 +1,6 @@
-#include <signal.h>
-#include <stdio.h>
+#include "ISEUrlIF.h"
 
-static void int_handler(int iSignal)
+INT main()
 {
-	printf("Catch a signal\r\n");
-}
-
-int main()
-{
+	ISEUrlIF *myurl;
 }
