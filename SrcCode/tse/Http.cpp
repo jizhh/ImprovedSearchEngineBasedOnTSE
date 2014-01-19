@@ -790,7 +790,7 @@ int CHttp::read_header(int sock, char *headerPtr)
 
 	int flags;
 
-	flags=fcntl(sock,F_GETFL,0);
+	flags=fcntl(sock,F_GETFL,0)
 	if(flags<0){
 		cout << "1.fcntl() in read_header()< 0" << endl;
 		return -1;

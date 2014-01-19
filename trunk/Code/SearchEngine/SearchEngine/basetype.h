@@ -7,9 +7,16 @@
 
 #ifndef _BASE_TYPE_
 #define _BASE_TYPE_
+
+#ifndef _WINSOCKAPI_
+#define _WINSOCKAPI_
 #include <Windows.h>
+#endif
 
 #define DEFAULT_PORT 80
+#define INET_ADDRSTRLEN 16
+#define INET6_ADDRSTRLEN 46
+
 typedef enum tag_url_scheme
 {                                 
 	SCHEME_HTTP,

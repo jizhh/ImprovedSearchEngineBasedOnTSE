@@ -26,3 +26,8 @@ ISEUrlIF::ISEUrlIF(INT iPort,
 ISEUrlIF::~ISEUrlIF(VOID)
 {
 }
+
+CHAR* ISEUrlIF::ise_GetIPByHost(const CHAR* pcHost)
+{
+	return this->pUrlImpl->ise_GetIPByHost(pcHost);
+}

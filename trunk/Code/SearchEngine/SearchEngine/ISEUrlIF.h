@@ -18,6 +18,7 @@ public:
 	virtual ~ISEUrlIF(VOID);
 	VOID fun(Test& t);
 	/*Ω‚ŒˆURL*/
+	CHAR *ise_GetIPByHost(CONST CHAR* pcHost);
 	BOOL ISE_ParseUrl(std::string szUrl);
 private:
 	std::tr1::shared_ptr<ISEUrl> pUrlImpl;
