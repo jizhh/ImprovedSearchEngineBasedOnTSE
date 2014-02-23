@@ -38,10 +38,10 @@ BOOL ISEUrl::ise_ParseUrl(std::string strUrl)
 	}
 	
 	ISEURL_PARA_S stPara;
-	memset(stPara, 0, sizeof(stPara));
+	memset(&stPara, 0, sizeof(stPara));
 	stPara.iPort = INVALID_PORT;
 	
-	ise_ParaseUrlEx(stUrl.c_str,
+	ise_ParseUrlEx(strUrl.c_str(),
 					(VOID*)&stPara);
 	
 	this->szHost = stPara.acHost;
@@ -68,12 +68,12 @@ VOID ISEUrl::ise_ParseUrlEx(IN const CHAR *pcUrl,
 	
 	ISEURL_PARA_S *pstPara = (ISEURL_PARA_S *)pPara;
 	
-	CHAR *pcTemp = strchr(pcUrl, ':');
+	const CHAR *pcTemp = strchr(pcUrl, ':');
 	strncpy(pstPara->acProtocol, pcUrl, pcUrl - pcTemp) ? strncpy(pstPara->acProtocol, "http", sizeof("http")) : NULL != pcTemp;
 	
 	pcTemp += 3 ? pcTemp : *(pcTemp+1) == '/' && *(pcTemp + 2) == '/';
 	
-	/* è§£æžhost */
+	/* ½âÎöhost */
 	int iHostLen = 0;
 	while(ise_IsValidHostChar(*pcTemp))
 	{
@@ -82,11 +82,12 @@ VOID ISEUrl::ise_ParseUrlEx(IN const CHAR *pcUrl,
 	}
 	strncpy(pstPara->acHost, (pcTemp++) - iHostLen, iHostLen);
 	
-	/* è§£æžè¯·æ±‚ */
-	strncpy(pstPara->acRequest, pcTemp, sizeof(pst->acRequest));
+	/* ½âÎöÇëÇó */
+	strncpy(pstPara->acRequest, pcTemp, sizeof(pstPara->acRequest));
 	
-	/* è§£æžç«¯å£ */
-	pcTemp++ = strchr(pstPara->acHost, ':');
+	/* ½âÎö¶Ë¿Ú */
+	pcTemp = strchr(pstPara->acHost, ':');
+	pcTemp++;
 	if(NULL != pcTemp)
 	{ 
 		pstPara->iPort = atoi(pcTemp);
@@ -105,7 +106,7 @@ Input arg:host: host string
 Output arg:
 Description: get IP address via host name
 *********************************************/
-CHAR *ISEUrl::ise_GetIPByHost(CONST CHAR * pcHost)
+CHAR *ISEUrl::ise_GetIPByHost(IN const CHAR * pcHost)
 {
 	if(!ise_IsValidIP(pcHost))
 	{
@@ -115,11 +116,10 @@ CHAR *ISEUrl::ise_GetIPByHost(CONST CHAR * pcHost)
 	CHAR* pcResult = NULL;
 	INT iLen = 0;
 	
-	ise_IPFormat(pcHost, pcResult);
-	if(pcResult != NULL)
+	if(ise_IPFormat(pcHost, pcResult))
 	{
 		return pcResult;
-	}
+	};
 	
 	//Init socket
 	WSADATA wsaData;
@@ -179,28 +179,31 @@ Output arg:CHAR *pcResult
 Return: 
 Description: Check if the host is IP format, then copy it
 *********************************************/
-VOID ISEUrl::ise_IPFormat(IN CHAR *pcHost, OUT CHAR *pcResult)
+BOOL ISEUrl::ise_IPFormat(IN const CHAR *pcHost, OUT CHAR *pcResult)
 {
+	INT iLen = 0;
 	ULONG ulAddr = 0;
-	
+	BOOL bReturn = false;
+
 	ulAddr = (ULONG)inet_addr(pcHost);
 	if(INADDR_NONE != ulAddr)
 	{
 		iLen = strlen(pcHost);
 		{
-		boost::lock_guard<boost::mutex> lock(_mutex);
-		pcResult = new CHAR[iLen + 1];
-		if(NULL == pcResult)
-		{
-			std::cerr<<"No enough memory\r\n";
-			return ;
-		}
+			boost::lock_guard<boost::mutex> lock(_mutex);
+			pcResult = new CHAR[iLen + 1];
+			if(NULL == pcResult)
+				{
+					std::cerr<<"No enough memory\r\n";
+					return false;
+				}
 		}
 		pcResult[0] = '\0';
 		strncpy(pcResult, pcHost, iLen);
+		return true;
 	}
 	
-	return;
+	return false;
 }
 
 /*********************************************
@@ -237,7 +240,7 @@ BOOL ISEUrl::ise_IsValidIP(CONST CHAR* pcIP) CONST
 
 	ULONG ulAddr = (ULONG)inet_addr(pcIP);
 	if(INADDR_NONE == ulAddr)
-	{`
+	{
 		return FALSE;
 	}
 

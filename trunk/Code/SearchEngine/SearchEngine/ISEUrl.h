@@ -27,7 +27,7 @@ typedef struct tag_ISEUrlPara {
 	CHAR acProtocol[PROTOCOL_LEN];
 	CHAR acHost[HOST_LEN];
 	CHAR acRequest[REQUEST_LEN];
-}ISEURL_PARA_s;
+}ISEURL_PARA_S;
 
 class ISEUrl
 	:public boost::basic_lockable_adapter<boost::recursive_mutex>
@@ -37,10 +37,10 @@ public:
 				    IN url_scheme_e e_scheme = SCHEME_HTTP, 
 				    IN CONST std::string &szUrl = ""):iPort(iPort),eScheme(e_scheme),szUrl(szUrl){};
 	virtual ~ISEUrl(VOID);
-	/*¬Ω√¢√é√∂URL*/
+	/*Ω‚ŒˆURL*/
 	BOOL ise_ParseUrl(std::string szUrl);
-	BOOL ise_IPFormat(IN CHAR *pcHost, OUT CHAR *pcResult);
-	BOOL ise_ParseUrlEx(IN CHAR *pcUrl,
+	BOOL ise_IPFormat(IN const CHAR *pcHost, OUT CHAR *pcResult);
+	VOID ise_ParseUrlEx(IN const CHAR *pcUrl,
 						INOUT VOID *pPara);
 	CHAR *ise_GetIPByHost(IN CONST CHAR* pcHost);
 	BOOL ise_IsValidIP(IN CONST CHAR *pcIP) CONST;
@@ -53,7 +53,7 @@ private:
 	std::string szHost;
 	std::string szPath;
 	std::string szUrl;
-	/*¬Ω√¢√é√∂√ê¬≠√í√©*/
+	/*Ω‚Œˆ–≠“È*/
 	VOID ise_parseScheme(CONST CHAR* pcUrl){};
 };
 #endif
