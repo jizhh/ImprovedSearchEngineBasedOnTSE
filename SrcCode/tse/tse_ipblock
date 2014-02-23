@@ -1,0 +1,163 @@
+01.#network-number host-bits
+02.162.105.0.0 0.0.255.255
+03.
+04.##################################################
+05.# the following ip blocks are still in PKU scope
+06.##################################################
+07.
+08.#www.pkuschool.com
+09.61.135.134.166 0.0.0.0
+10.#pre.pkuschool.com
+11.61.135.134.171 0.0.0.0
+12.#http://www.socpku.net.cn/
+13.#www.szvup.com not belonging to PKU
+14.#www.socpku.net.cn
+15.61.144.207.130 0.0.0.0
+16.
+17.#www.netera.cn
+18.166.111.214.120 0.0.0.0
+19.
+20.
+21.
+22.#leu.cbi.pku.edu.cn
+23.202.38.125.4 0.0.0.0
+24.#blast.cbi.pku.edu.cn
+25.202.38.125.5 0.0.0.0
+26.#ensembl.cbi.pku.edu.cn
+27.202.38.125.6 0.0.0.0
+28.
+29.#antisars.cbi.pku.edu.cn
+30.#cottonfiber.cbi.pku.edu.cn:8888
+31.#goldenpath.cbi.pku.edu.cn
+32.202.38.126.18 0.0.0.0
+33.
+34.
+35.#srs.pku.edu.cn
+36.202.38.126.19 0.0.0.0
+37.
+38.#cn.expasy.org (expasy.pku.edu.cn)
+39.202.38.126.22 0.0.0.0
+40.
+41.#his.cbi.pku.edu.cn
+42.202.38.126.25 0.0.0.0
+43.#psort.cbi.pku.edu.cn
+44.#rgd.cbi.pku.edu.cn
+45.202.38.126.26 0.0.0.0
+46.#pak.cbi.pku.edu.cn
+47.202.38.126.27 0.0.0.0
+48.
+49.#mirror.pku.edu.cn
+50.202.38.127.33 0.0.0.0
+51.
+52.#http://www.ipc.pku.edu.cn/
+53.202.38.126.48 0.0.0.0
+54.
+55.#www.pkusimba.com
+56.202.108.226.115 0.0.0.0
+57.
+58.#www.cbi.pku.edu.cn
+59.202.112.7.9 0.0.0.0
+60.
+61.#dial.pku.edu.cn
+62.202.112.7.40 0.0.0.0
+63.
+64.#account.pku.edu.cn
+65.202.112.7.56 0.0.0.0
+66.
+67.#http://www.bjmu.edu.cn/
+68.202.112.176.2 0.0.0.0
+69.202.112.176.36 0.0.0.0
+70.
+71.#spspku.bjmu.edu.cn
+72.202.112.190.93 0.0.0.0
+73.
+74.#student.law.pku.edu.cn
+75.202.205.10.78 0.0.0.0
+76.
+77.#www.pkuef.org
+78.#www.gotopku.com
+79.210.51.4.10 0.0.0.0
+80.
+81.#www.pkuaa.org
+82.#www.pku.org.cn
+83.210.51.4.11 0.0.0.0
+84.
+85.#www.gotopku.cn 
+86.#www.zwyjw.net not belonging to PKU
+87.#www.duolaimi.com not belonging to PKU
+88.#210.192.97.10 0.0.0.0
+89.
+90.#www.pkujm.org
+91.#a virtual web server
+92.#210.192.102.85 0.0.0.0
+93.
+94.
+95.#www.pkuschool.edu.cn
+96.211.68.72.34 0.0.0.0
+97.
+98.#pkuh6.bjmu.edu.cn
+99.211.71.54.11 0.0.0.0
+100.
+101.#http://www.iersite.com/
+102.211.96.112.98 0.0.0.0
+103.
+104.#www.beida-online.com
+105.211.100.5.10 0.0.0.0
+106.211.100.5.11 0.0.0.0
+107.211.100.5.12 0.0.0.0
+108.211.100.7.124 0.0.0.0
+109.
+110.#http://www.bdfx.net.cn/
+111.#jqrh.top263.net not belonging to PKU
+112.#www.cnlaw.net not belonging to PKU
+113.211.100.15.68 0.0.0.0
+114.
+115.#article.chinalawinfo.com
+116.211.100.18.62 0.0.0.0
+117.
+118.#www.pkuemba.com
+119.211.101.136.78 0.0.0.0
+120.
+121.
+122.#www.law.pku.edu.cn
+123.211.151.90.78 0.0.0.0
+124.
+125.#www.szemba-pku.com
+126.211.152.50.201 0.0.0.0
+127.
+128.#www.pku-ht.com
+129.211.154.211.22 0.0.0.0
+130.
+131.#www.szpku-ht.com
+132.211.154.211.43 0.0.0.0
+133.#www.pkuboya.com
+134.#www.dinosaur.net.cn not belonging to PKU
+135.#211.154.211.137 0.0.0.0
+136.
+137.#www.szpku.net
+138.#http://www.ieredu.com/
+139.#www.shenmeijingji.com not belonging to PKU
+140.218.5.72.73 0.0.0.0
+141.
+142.#www.pkugz.com
+143.#www.ldzc.com not belonging to PKU
+144.218.5.77.172 0.0.0.0
+145.
+146.#www.mbapku.com
+147.218.17.223.17 0.0.0.0
+148.
+149.#www.founderpku.com
+150.219.232.50.236 0.0.0.0
+151.
+152.#www.foundertech.com
+153.219.232.55.138 0.0.0.0
+154.
+155.
+156.####################################
+157.#net.pku.cn
+158.#162.105.203.25 0.0.0.0
+159.
+160.#www.pku.edu.cn
+161.#162.105.129.12 0.0.0.0
+
+

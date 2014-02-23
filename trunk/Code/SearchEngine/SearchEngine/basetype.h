@@ -13,6 +13,8 @@
 #include <Windows.h>
 #endif
 
+#define INOUT
+
 #define DEFAULT_PORT 80
 #define INET_ADDRSTRLEN 16
 #define INET6_ADDRSTRLEN 46

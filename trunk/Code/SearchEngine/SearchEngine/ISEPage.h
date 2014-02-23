@@ -54,7 +54,7 @@ public:
 	~ISEPage(VOID);
 private:
 	/* 解析网页头信息*/
-	VOID ise_GetStatusCode(std::string szHeader);
+	VOID ise_GetStatusCode(std::string &szHeader);
 	VOID ise_GetContentLength(std::string szHeader);
 	VOID ise_GetConnectionState(std::string szHeader);
 	VOID ise_GetLocation(std::string szHeader);
