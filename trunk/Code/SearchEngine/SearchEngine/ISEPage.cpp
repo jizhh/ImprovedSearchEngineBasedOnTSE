@@ -14,3 +14,5 @@ ISEPage::ISEPage(VOID)
 ISEPage::~ISEPage(VOID)
 {
 }
+
+ISePage::
